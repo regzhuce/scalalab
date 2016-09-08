@@ -1,0 +1,41 @@
+var N=4000
+
+var xr = rand(N,N)
+
+var xe = new Mat(xr)
+
+tic
+var xxe = xe*xe
+var tme=toc
+
+
+tic
+var xxr = xr*xr
+var tmr=toc
+
+max(max(xxr-xxe))
+
+
+import org.ojalgo.matrix.store.MatrixStore;
+import org.ojalgo.matrix.store.PrimitiveDenseStore;
+import org.ojalgo.random.Uniform;
+import org.ojalgo.matrix._
+
+import org.ojalgo.access.Access1D;
+import org.ojalgo.access.Access2D;
+import org.ojalgo.matrix.store.PhysicalStore;
+import org.ojalgo.matrix.store.PrimitiveDenseStore;
+import org.ojalgo.scalar.ComplexNumber;
+import org.ojalgo.jtype.context.NumberContext;
+
+    def  makeFull(dim: Int) = {
+        PrimitiveMatrix.FACTORY.makeFilled(dim, dim, new Uniform())
+    }
+
+   var dimension = N
+   var tmpMatrix = makeFull(dimension)
+   
+   tic
+   var mm = tmpMatrix.multiply(tmpMatrix)
+   var tmalgo = toc
+

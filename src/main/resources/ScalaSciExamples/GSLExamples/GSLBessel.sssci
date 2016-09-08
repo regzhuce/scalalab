@@ -1,0 +1,9 @@
+
+
+// tests the gslSfBesselJ0 method provided by the gslOps object
+var x =9.8
+
+var t = -8::0.01::8
+
+
+var yy = t map scalaExec.Interpreter.NativeLibsObj.gslOps.gslSfBesselJ0

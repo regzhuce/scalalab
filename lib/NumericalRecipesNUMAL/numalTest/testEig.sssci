@@ -1,0 +1,9 @@
+// zero-indexed matrices
+var a=M("3 0 1; 0 -3 0; 1 0 3")
+var (aeigs, aevecs) = eig(a)
+
+
+var a=M("3 0 1; 0 -3 0; 1 0 3")
+var (aeigs, aevecs) = eig(a)
+
+ a=- [3 0 1; 0 -3 0; 1 0 3]

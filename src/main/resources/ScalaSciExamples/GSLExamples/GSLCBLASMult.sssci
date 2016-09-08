@@ -1,0 +1,46 @@
+
+
+  import org.bytedeco.javacpp.gsl._
+  import org.bytedeco.javacpp.DoublePointer
+
+  
+
+var N=200
+var M = 1500
+var K = 2500
+var a = Ones(N*M)
+var b = Ones(M*K)
+var c = new Array[Double](N*K)
+
+  val ap = new DoublePointer(a: _*)
+  val am  = gsl_matrix_view_array (ap, N, M)
+  
+  
+  val bp = new DoublePointer(b: _*)
+  val bm  = gsl_matrix_view_array (bp, M, K)
+  
+  
+  val cp = new DoublePointer(c: _*)
+  val cm  = gsl_matrix_view_array (cp, N, K)
+  
+// compute C = A B
+
+gsl_blas_dgemm(CblasNoTrans, CblasNoTrans, 1.0, am.matrix, bm.matrix, 0.0, cm.matrix)
+
+// copy the data
+var cdata= new RichDouble2DArray(N,K)
+var row=0;  var col = 0
+while (row<N) {
+    col = 0
+    while (col<K) {
+        cdata(row, col) = cm.matrix.data.get(row*K+col)
+        col+=1
+        }
+        row+=1
+     }
+        
+       cdata 
+cm.matrix.data.get(0)
+
+
+

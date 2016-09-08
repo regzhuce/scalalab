@@ -1,0 +1,33 @@
+
+
+import breeze.linalg.DenseMatrix
+
+
+var N=3000
+var x = new DenseMatrix[Double](N, N)
+
+var k=0
+var l=0
+
+while (k<N) {
+    l=0
+    while (l<N) {
+      x(k,l)=1.0
+      l+=1
+      }
+     k+=1
+  }
+      
+
+x
+tic
+var xx = x*x
+var tm=toc
+
+var rr = rand(N,N)
+
+tic
+var rrr = rr*rr
+var tmr = toc
+
+
