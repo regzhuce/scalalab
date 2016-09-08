@@ -1,0 +1,30 @@
+
+load("yeastdata.mat")
+
+
+var rdvalues = new RichDouble2DArray(yeastvalues)
+
+var table2 = rdvalues.removeRowsNaN
+
+
+// the corresponding row has large variance
+def hasLargeVariance(row: Int) =  { if (variance(table2(row,::)) > 0.1) true else false }
+
+var filtTable = table2. filterRows( hasLargeVariance (_))
+
+
+// returns true for rows with larger mean than log2(2)
+def lineWithLargeMean(row: Int) = {
+    val currentRow = filtTable(row,::)
+    var meanOfRow = mean(currentRow)
+    if (meanOfRow > log2(2)) true else false
+   }
+   
+    
+var tableWithLargeMeans = filtTable.filterRows ( lineWithLargeMean (_) )
+
+     
+
+          
+          
+          

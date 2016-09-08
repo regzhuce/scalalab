@@ -1,0 +1,13 @@
+
+
+
+import org.ojalgo.matrix.PrimitiveMatrix
+
+var tmpFactory = PrimitiveMatrix.FACTORY
+
+
+var tmpA = tmpFactory.makeFilled(2000,2000, new org.ojalgo.random.Weibull(5.0, 2.0))
+
+tic
+var res = tmpA.multiply(tmpA)
+var tm = toc

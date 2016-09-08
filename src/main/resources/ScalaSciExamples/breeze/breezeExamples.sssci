@@ -1,0 +1,89 @@
+
+import breeze.linalg._
+
+val x = DenseVector.zeros[Double](5)
+
+x
+
+x(0)=1.0
+
+x
+
+x(3 to 4) := .5
+
+val m = DenseMatrix.zeros[Int](5,5)
+
+(m.rows, m.cols)
+
+m(4,::) := DenseVector(1,2,3,4,5).t 
+
+m
+
+import breeze.stats.distributions._
+
+
+val poi = new Poisson(3.0);
+
+val s = poi.sample(5);
+
+val doublePoi = for(x <- poi) yield x.toDouble 
+
+(poi.mean,poi.variance)
+
+val expo = new Exponential(0.5);
+
+
+import breeze.optimize._
+
+val f = new DiffFunction[DenseVector[Double]] {
+                    def calculate(x: DenseVector[Double]) = {
+                      (norm((x - 3d) :^ 2d,1d),(x * 2d) - 6d);
+                    }
+                  }
+                  
+                  f.valueAt(DenseVector(3,3,3))
+                  
+                  
+                  f.gradientAt(DenseVector(3,0,1))
+                  
+                  
+                  def g(x: DenseVector[Double]) = (x - 3.0):^ 2.0 sum
+                  
+                  g(DenseVector(0.0,0.0,0.0))
+                  
+                  val diffg = new ApproximateGradientFunction(g)
+                  
+                  diffg.gradientAt(DenseVector(3,0,1))
+                  
+                  
+                  
+                  
+                  import breeze.optimize.linear._
+val lp = new LinearProgram()
+import lp._
+val x0 = Real()
+val x1 = Real()
+val x2 = Real()
+
+val lpp =  ( (x0 +  x1 * 2 + x2 * 3 )
+    subjectTo ( x0 * -1 + x1 + x2 <= 20)
+    subjectTo ( x0 - x1 * 3 + x2 <= 30)
+    subjectTo ( x0 <= 40 )
+)
+
+val result = maximize( lpp)
+
+assert( norm(result.result - DenseVector(40.0,17.5,42.5), 2) < 1E-4)
+
+
+import breeze.linalg._
+import breeze.plot._
+
+val f = Figure()
+val p = f.subplot(0)
+val x = linspace(0.0,1.0)
+p += plot(x, x :^ 2.0)
+p += plot(x, x :^ 3.0, '.')
+p.xlabel = "x axis"
+p.ylabel = "y axis"
+f.saveas("lines.png")

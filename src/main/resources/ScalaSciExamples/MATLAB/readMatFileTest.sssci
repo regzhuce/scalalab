@@ -1,0 +1,11 @@
+
+import scalaSci.math.io.MatIO;
+load("/home/sterg/NBProjects/ScalaLab211/yeastdata.mat")
+val yeastdata = getMatArray("yeastvalues")
+yeastdata.print
+
+
+
+var cellStrings = scalaExec.Interpreter.GlobalValues.cellStrings
+
+cellStrings.size
