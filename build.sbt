@@ -4,13 +4,13 @@ version             := ""
 
 organization        := ""
 
-scalaVersion        := "2.12.0-M5" 
+scalaVersion        := "2.12.0-RC1" 
 
 javaOptions   ++= Seq("-Xss", "2M", "-Xmx", "4G")
 
 javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
-crossScalaVersions  := Seq("2.12.0-M5")
+crossScalaVersions  := Seq("2.12.0-RC1")
 
 description         := "A MATLAB-like environment)"
 
