@@ -28,6 +28,7 @@ public class CCOps
                   libName = "CCOps.dylib";
                   break;
               }
+              break; 
            }
         
 	try
