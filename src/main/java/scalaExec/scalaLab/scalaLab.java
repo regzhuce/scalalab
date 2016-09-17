@@ -2216,32 +2216,7 @@ public class scalaLab extends JFrame implements WindowListener, ActionListener {
                 watchClassesOfScalaSci.displayClassesAndMethodsAsString(coltClasses, "CERN Colt  ", filterString, scalaExec.gui.WatchClasses.watchXLoc + k * 50, scalaExec.gui.WatchClasses.watchYLoc + k * 50);
             });
 
-            JMenu JavaREPLMenu = new JMenu("Java REPL");
-            JavaREPLMenu.setToolTipText("F8 to evaluate Java code, Java REPL is for evaluating Java code, not Scala!");
-            JavaREPLMenu.setFont(GlobalValues.uifont);
-
-            JMenuItem resetJavaREPL = new JMenuItem("Reset Java REPL");
-            resetJavaREPL.addActionListener((ActionEvent e) -> {
-                scalaExec.Interpreter.GlobalValues.globalJavaEvaluator.reset();
-            });
-            resetJavaREPL.setFont(GlobalValues.uifont);
-            JavaREPLMenu.add(resetJavaREPL);
-
-            JMenuItem resultsJavaREPL = new JMenuItem("Results of Java REPL");
-            resultsJavaREPL.addActionListener((ActionEvent e) -> {
-                System.out.println(scalaExec.Interpreter.GlobalValues.globalJavaEvaluator.results().toString());
-            });
-            resultsJavaREPL.setFont(GlobalValues.uifont);
-            JavaREPLMenu.add(resultsJavaREPL);
-
-            JMenuItem expressionsJavaREPL = new JMenuItem("Expressions Java REPL");
-            expressionsJavaREPL.addActionListener((ActionEvent e)
-                    -> {
-                System.out.println(scalaExec.Interpreter.GlobalValues.globalJavaEvaluator.expressions().toString());
-            });
-            expressionsJavaREPL.setFont(GlobalValues.uifont);
-            JavaREPLMenu.add(expressionsJavaREPL);
-
+         
             appearanceMenu.add(increasePaneFontMenuItem);
             appearanceMenu.add(decreasePaneFontMenuItem);
             appearanceMenu.add(increaseRSyntaxFontMenuItem);
@@ -2488,7 +2463,6 @@ public class scalaLab extends JFrame implements WindowListener, ActionListener {
             mainJMenuBar.add(editMenu);
             mainJMenuBar.add(importWizardMenu);
             mainJMenuBar.add(compileMenu);
-            mainJMenuBar.add(JavaREPLMenu);
             mainJMenuBar.add(scalaInterpreterMenu);
 
             mainJMenuBar.add(confMenu);

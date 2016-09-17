@@ -415,7 +415,6 @@ class EditorPane  extends  JPanel with CustomizableFont {
  // Mouse Double Click on an identifier: Displays its value
 //  Press F2 to execute code up to cursor position     
   // Press F5 to clear the output console
-  // Press F9 to present completion results with JavaREPL
  // Press  Shift-F4 on an identifier (either selected or not). Presents a completion list, if a dot exists the results are filtered, e.g.   with:  "jf.setV", filters only methods starting with "setV"
   // Press F4 on a type (e.j. javax.swing.JFrame). Presents the constructors, methods and fields of the type with a JTree)
   // Select a keyword (e.g. "fft") and press F1 for obtaining help on the selected identifier using Java reflection  // Select a keyword (e.g. "fft") and press F1 for obtaining help on the selected identifier using Java reflection 

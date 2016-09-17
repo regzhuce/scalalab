@@ -18,18 +18,6 @@ import java.util.Vector;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-import javarepl.Evaluator;
-import javarepl.completion.AggregateCompleter;
-import javarepl.completion.Completer;
-import static javarepl.completion.Completers.javaKeywordCompleter;
-import javarepl.completion.CompletionResult;
-import javarepl.completion.ConsoleCompleter;
-import javarepl.completion.InstanceMemberCompleter;
-import javarepl.completion.StaticMemberCompleter;
-import javarepl.completion.TypeCompleter;
-import javarepl.completion.TypeResolver;
-import static javarepl.console.commands.Command.functions.completer;
-import javarepl.console.commands.Commands;
 import javax.swing.*;
 import org.fife.ui.autocomplete.CompletionProvider;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
@@ -57,7 +45,7 @@ public class GlobalValues
 {
 
     
-    static public   String  scalalabBuildVersion = "15 -  Sep - 16";
+    static public   String  scalalabBuildVersion = "17 -  Sep - 16";
     
    
     static public ScalaInterpreterPane globalInterpreterPane;  // the interpreter pane object which is the main interface to the Scala interpreter
@@ -69,13 +57,6 @@ public class GlobalValues
     static public String  userPathsFileName = "scalalabUserPaths.txt";  
     
      
-    // evaluator for Java expressions. Java REPL is used in ScalaLab to allow scripting of Java code,
-    // and communication of computed results with Java code at the Scala interpreter binding
-    public static  javarepl.Evaluator globalJavaEvaluator = new javarepl.Evaluator();  
-    
-    public static  javarepl.console.SimpleConsole globalSimpleConsole = new javarepl.console.SimpleConsole(
-             javarepl.console.ConsoleConfig.consoleConfig(globalJavaEvaluator ));
-    
             
     static public String  editingFileInPane = null;  // the user has loaded a specific file to edit
     static public boolean  editorTextSaved = false; 

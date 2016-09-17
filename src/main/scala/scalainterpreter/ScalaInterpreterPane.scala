@@ -1,44 +1,4 @@
-/*
-      imap.put(KeyStroke.getKeyStroke(KeyEvent.VK_F8, 0), "javarepl")
-      amap.put("EDTexecute", new AbstractAction {
-           def actionPerformed(e:ActionEvent) {
-             
-              javax.swing.SwingUtilities.invokeLater(  new Runnable {
-                     def run {
-                {
-            var cr = new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR)
-            scalaExec.Interpreter.GlobalValues.editorPane.setCursor(cr)
-            
-      var currentText =   getSelectedTextOrCurrentLine
-             
-      var result =  GlobalValues.globalJavaEvaluator.evaluate(currentText.get)
-       
-      GlobalValues.consoleOutputWindow.append(result.toString())
-      var  allResults = GlobalValues.globalJavaEvaluator.context().results()
-        if (allResults.isEmpty()==false) {
-        allResults foreach( x => { 
-                GlobalValues.globalInterpreter.eval("var  "+x.key() + " = "+ x.value())
-            
-           GlobalValues.consoleOutputWindow.append("key = "+ x.key()+",  value = "+x.value() )
-           GlobalValues.consoleOutputWindow.append("\n")
-          })
-        } 
-           
-                    scalaExec.Interpreter.GlobalValues.editorPane.setCursor(ScalaInterpreterPaneGlobals.defaultCursor)
-              
-                    ScalaInterpreterPaneGlobals.lastResult.toString 
-                    
-                    
-            } // run
-                             
-              } // Runnable
-           )
-      
-      }  // actionPerformed
-      }  // AbstractAction
-        )
 
-*/
       
       
       
@@ -585,54 +545,6 @@ def setupKeyActions() = {
         })
         
   
-    
-    imap.put(KeyStroke.getKeyStroke(KeyEvent.VK_F8, 0), "javarepl")
-    
-      amap.put("javarepl", new AbstractAction {
-           def actionPerformed(e:ActionEvent) {
-             
-              javax.swing.SwingUtilities.invokeLater(  new Runnable {
-                     def run 
-                {
-            var cr = new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR)
-            scalaExec.Interpreter.GlobalValues.editorPane.setCursor(cr)
-            
-                var currentText =   getSelectedTextOrCurrentLine.getOrElse("")
-             
-             //   println("curremt Text = "+currentText)
-             
-                
-                                                
-      var result =  GlobalValues.globalJavaEvaluator.evaluate(currentText)
-                                                         
-                                                 
-      GlobalValues.consoleOutputWindow.append(result.toString())
-      var  allResults = GlobalValues.globalJavaEvaluator.context().results()
-        if (allResults.isEmpty()==false) {
-         var numResults = allResults.size()
-         var resId = 0
-         while (resId < numResults) {
-             var x = allResults.get(resId)
-             GlobalValues.consoleOutputWindow.append("key = "+ x.key()+",  value = "+x.value() )
-            
-             GlobalValues.consoleOutputWindow.append("\n")
-             resId += 1
-         }
-        }
-             
-      scalaExec.Interpreter.GlobalValues.editorPane.setCursor(ScalaInterpreterPaneGlobals.defaultCursor)
-          
-   }         
-                      
-                   
-        }) 
-          
-          
-        } 
-      })
-                  
-   
-
     imap.put(KeyStroke.getKeyStroke(KeyEvent.VK_F6, InputEvent.CTRL_MASK), "stop")
       amap.put("stop", new AbstractAction {
         def actionPerformed(e: ActionEvent)   {
@@ -740,9 +652,7 @@ def setupKeyActions() = {
     imap.put(KeyStroke.getKeyStroke(KeyEvent.VK_F4, 0), "inspectCompletionList")
     amap.put("inspectCompletionList", new inspectCompletionListAction())
     
-    imap.put(KeyStroke.getKeyStroke(KeyEvent.VK_F9, 0), "inspectCompletionListJavaREPL")
-    amap.put("inspectCompletionListJavaREPL", new inspectCompletionListJavaREPLAction())
-    
+   
         
     
     imap.put(KeyStroke.getKeyStroke(KeyEvent.VK_F4, InputEvent.SHIFT_MASK), "inspectCompletionListClass")

@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/sterg/NBProjects/antsbtScalaLab212/src/main/java/scalaExec/Interpreter/NativeLibsObj.java</file>
+            <file>file:/Users/sterg/NBProjects/antsbtScalaLab212/src/main/scala/scalainterpreter/EditorPane.scala</file>
             <file>file:/Users/sterg/NBProjects/antsbtScalaLab212/src/main/java/scalaExec/Interpreter/GlobalValues.java</file>
+            <file>file:/Users/sterg/NBProjects/antsbtScalaLab212/src/main/java/scalaExec/scalaLab/scalaLab.java</file>
+            <file>file:/Users/sterg/NBProjects/antsbtScalaLab212/src/main/scala/scalainterpreter/ScalaInterpreterPane.scala</file>
         </group>
     </open-files>
 </project-private>
