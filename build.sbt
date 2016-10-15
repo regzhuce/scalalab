@@ -14,10 +14,8 @@ crossScalaVersions  := Seq("2.12.0-RC1")
 
 description         := "A MATLAB-like environment)"
 
-scalacOptions ++= Seq("-optimise")
 
 exportJars := true
-
 
  
 val classPath = Seq(
@@ -88,3 +86,5 @@ packageOptions += Package.ManifestAttributes(
   "Class-Path" -> classPath.mkString(" "),
   "Main-Class" -> "scalaExec.scalaLab.scalaLab"
 )
+   
+

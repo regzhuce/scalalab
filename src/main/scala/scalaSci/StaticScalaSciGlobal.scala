@@ -85,12 +85,12 @@ trait  StaticScalaSciGlobal {
   // some type aliases for convenient code writing
      type AD = Array[Double]
      type AAD = Array[Array[Double]]
-
+     type AI = Array[Int]
+   
      type RDDA = scalaSci.RichDouble2DArray
      type RDA = scalaSci.RichDouble1DArray
      
-     type AI = Array[Int]
-          
+           
      val PI = java.lang.Math.PI
      
   // final define implicit conversions

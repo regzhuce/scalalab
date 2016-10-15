@@ -45,7 +45,7 @@ public class GlobalValues
 {
 
     
-    static public   String  scalalabBuildVersion = "17 -  Sep - 16";
+    static public   String  scalalabBuildVersion = "15 -  Oct - 16";
     
    
     static public ScalaInterpreterPane globalInterpreterPane;  // the interpreter pane object which is the main interface to the Scala interpreter
@@ -326,6 +326,8 @@ public class GlobalValues
     static public String currentToolboxName;   // keeps the currently loaded toolbox name
     
     // required libs for the embedded Apache Commons Math library that is placed within the /lib folder
+    // that version is somewhat outdated but it is required for the Symbolic Algebra code
+    // a newer Apache Common Maths library exists within the default toolboxes folder
     static public  String ApacheCommonsImports =
                     "\nimport org.apache.commons.math._\n"+
                     "import org.apache.commons.math.analysis._ \n"+
@@ -382,7 +384,7 @@ public class GlobalValues
             
             
             
-                
+                // facilitates the use of the basic ScalaLab libraries from Java code
     static public    String  basicImportsJava =
                      "import java.awt.*; \n"+
                     "import java.awt.event.*; \n"+
@@ -411,6 +413,7 @@ public class GlobalValues
              "import scalaExec.Interpreter.importHelper._;\n";  // essential imporet to "bootstrap";
     
             
+   // common imports used independently of the Matrix type that ScalaLab uses
     static public String commonImports = 
            "import _root_.java.awt.Color ; \n" +   // Java standard UI and graphics support
             "import scalaExec.Interpreter.importHelper._;\n"+
@@ -539,7 +542,7 @@ public class GlobalValues
     static public String warmUpGSLScript = 
             " org.bytedeco.javacpp.gsl.gsl_ieee_env_setup ";    // this dummy code snippet warms up GSL interface properly
             
-    
+    // these are intended for standalone applications that make use of the ScalaLab libraries
     static public String standAloneImports = 
            "import _root_.java.awt.Color ; \n" +   // Java standard UI and graphics support
             "import scalaExec.Interpreter.importHelper._;\n"+
