@@ -42,6 +42,14 @@
 
 `package`
 
+`In order to compile and package ScalaLab with sbt, you should set the variable SBT_OPTS="-Xmx1536M  -Xss13M" `
+
+`The UNIX script runSbt.sh accomplishes that, but for Windows you should set the variable using the Control Panel.`
+
+
+`Also, in order to run the produced .jar executable from the sbt build,
+using the providing scripts, you should rename it to ScalaLab.jar.`
+
 ## `ScalaLab most useful commands`
 
 
@@ -70,7 +78,8 @@
 
 `Press SHIFT-F4: within an identifier (either selected or not) presents information for the class of the identifier using Java reflection (e.g. for the javax.swing.JFrame class) with a JTree`
 
-
+`In order to build ScalaLab with sbt, you should set the variable SBT_OPTS="-Xmx1536M  -Xss13M”. The UNIX script runSbt.sh accomplishes this, but for Windows you should set 
+the variable using Control Panel.`
 
 ## ScalaLab Advantages
 
